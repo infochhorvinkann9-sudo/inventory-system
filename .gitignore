@@ -1,0 +1,17 @@
+## Build and Cache Folders
+bin/
+obj/
+.vs/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Packages & Debugging
+packages/
+TestResults/
+*.log
+*.pdb
