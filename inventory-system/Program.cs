@@ -16,7 +16,7 @@ namespace inventory_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formlogin());
+            Application.Run(new View.MainForm());
         }
     }
 }
