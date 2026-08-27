@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace inventory_system.View
 {
-    public partial class MainForm : Form
+    public partial class cuAccessory : UserControl
     {
-        public MainForm()
+        public cuAccessory()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
