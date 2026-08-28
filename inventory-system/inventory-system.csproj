@@ -92,17 +92,47 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\cuAccessory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\cuAccessory.Designer.cs">
-      <DependentUpon>cuAccessory.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_Dashboard.Designer.cs">
+      <DependentUpon>uc_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_Accessory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_Accessory.Designer.cs">
+      <DependentUpon>uc_Accessory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_Category.Designer.cs">
+      <DependentUpon>uc_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_Setting.Designer.cs">
+      <DependentUpon>uc_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_Supplier.Designer.cs">
+      <DependentUpon>uc_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_User.Designer.cs">
+      <DependentUpon>uc_User.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="formlogin.resx">
       <DependentUpon>formlogin.cs</DependentUpon>
@@ -117,11 +147,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\cuAccessory.resx">
-      <DependentUpon>cuAccessory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_Dashboard.resx">
+      <DependentUpon>uc_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_Accessory.resx">
+      <DependentUpon>uc_Accessory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_Category.resx">
+      <DependentUpon>uc_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_Setting.resx">
+      <DependentUpon>uc_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_Supplier.resx">
+      <DependentUpon>uc_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_User.resx">
+      <DependentUpon>uc_User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
