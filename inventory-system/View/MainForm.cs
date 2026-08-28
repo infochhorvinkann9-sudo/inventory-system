@@ -12,6 +12,10 @@ namespace inventory_system.View
 {
     public partial class MainForm : Form
     {
+        public void AddPageToTab(UserControl uc, String btn)
+        {
+
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -20,6 +24,56 @@ namespace inventory_system.View
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            uc_Container.Controls.Clear();
+            uc_Dashboard dashboardControl = new uc_Dashboard();
+            dashboardControl.Dock = DockStyle.Fill;
+            uc_Container.Controls.Add(dashboardControl);
+            dashboardControl.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            uc_Container.Controls.Clear();
+            uc_Accessory accessoryControl = new uc_Accessory();
+            accessoryControl.Dock = DockStyle.Fill;
+            uc_Container.Controls.Add(accessoryControl);
+            accessoryControl.BringToFront();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            uc_Container.Controls.Clear();
+            uc_Category categoryControl = new uc_Category();
+            categoryControl.Dock = DockStyle.Fill;
+            uc_Container.Controls.Add(categoryControl);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            uc_Container.Controls.Clear();
+            uc_Supplier supplierControl = new uc_Supplier();
+            supplierControl.Dock = DockStyle.Fill;
+            uc_Container.Controls.Add(supplierControl);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            uc_Container.Controls.Clear();
+            uc_User userControl = new uc_User();
+            userControl.Dock = DockStyle.Fill;
+            uc_Container.Controls.Add(userControl);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            uc_Container.Controls.Clear();
+            uc_Setting settingControl = new uc_Setting();
+            settingControl.Dock = DockStyle.Fill;
+            uc_Container.Controls.Add(settingControl);
         }
     }
 }
