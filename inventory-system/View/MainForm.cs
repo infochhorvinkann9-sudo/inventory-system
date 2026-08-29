@@ -75,5 +75,10 @@ namespace inventory_system.View
             uc_Container.Controls.Add(settingControl);
             settingControl.BringToFront();
         }
+
+        private void uc_Container_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

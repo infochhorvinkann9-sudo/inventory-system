@@ -189,6 +189,7 @@
             this.uc_Container.Name = "uc_Container";
             this.uc_Container.Size = new System.Drawing.Size(881, 670);
             this.uc_Container.TabIndex = 1;
+            this.uc_Container.Paint += new System.Windows.Forms.PaintEventHandler(this.uc_Container_Paint);
             // 
             // MainForm
             // 
