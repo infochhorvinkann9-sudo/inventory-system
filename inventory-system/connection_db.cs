@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace inventory_system
 {
-    internal class connection_db
+    class connection_db
     {
         public SqlConnection conn;
-        public connection_db(SqlConnection conn)
+        public connection_db()
         {
             try
             {

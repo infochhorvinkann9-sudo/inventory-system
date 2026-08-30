@@ -91,6 +91,7 @@
     <Compile Include="formlogin.Designer.cs">
       <DependentUpon>formlogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelsSetting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\MainForm.cs">
@@ -185,7 +186,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\man-with-sunglasses-and-suit.png" />
