@@ -187,7 +187,7 @@
             this.uc_Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_Container.Location = new System.Drawing.Point(214, 0);
             this.uc_Container.Name = "uc_Container";
-            this.uc_Container.Size = new System.Drawing.Size(881, 670);
+            this.uc_Container.Size = new System.Drawing.Size(759, 670);
             this.uc_Container.TabIndex = 1;
             this.uc_Container.Paint += new System.Windows.Forms.PaintEventHandler(this.uc_Container_Paint);
             // 
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 670);
+            this.ClientSize = new System.Drawing.Size(973, 670);
             this.Controls.Add(this.uc_Container);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
