@@ -16,5 +16,10 @@ namespace inventory_system.View
         {
             InitializeComponent();
         }
+
+        private void uc_Setting_Load(object sender, EventArgs e)
+        {
+   
+        }
     }
 }
