@@ -21,7 +21,11 @@ namespace inventory_system.Controller
 
         // Get and View Data User
         public DataTable dt = new DataTable();
+<<<<<<< HEAD
 
+=======
+        //public DataSet ds = new DataSet();
+>>>>>>> d93c21be10aa2b46b7f57d77e3e1e524154171af
         public SqlDataAdapter adapter = new SqlDataAdapter();
 
         public DataTable ShowData()

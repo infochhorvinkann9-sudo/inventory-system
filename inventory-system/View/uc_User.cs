@@ -33,5 +33,13 @@ namespace inventory_system.View
             UserController userCtrl = new UserController();
             dgUser.DataSource = userCtrl.ShowData();
         }
+<<<<<<< HEAD
+=======
+
+        private void dgUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+>>>>>>> d93c21be10aa2b46b7f57d77e3e1e524154171af
     }
 }
