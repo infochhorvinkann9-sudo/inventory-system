@@ -64,7 +64,7 @@
             this.LogoCompany.Image = global::inventory_system.Properties.Resources.man_with_sunglasses_and_suit;
             this.LogoCompany.Location = new System.Drawing.Point(228, 116);
             this.LogoCompany.Name = "LogoCompany";
-            this.LogoCompany.Size = new System.Drawing.Size(240, 308);
+            this.LogoCompany.Size = new System.Drawing.Size(242, 310);
             this.LogoCompany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoCompany.TabIndex = 5;
             this.LogoCompany.TabStop = false;
@@ -77,7 +77,7 @@
             this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSave.Location = new System.Drawing.Point(689, 307);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(138, 46);
+            this.btnSave.Size = new System.Drawing.Size(140, 48);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -90,7 +90,7 @@
             this.btnCencel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnCencel.Location = new System.Drawing.Point(512, 307);
             this.btnCencel.Name = "btnCencel";
-            this.btnCencel.Size = new System.Drawing.Size(138, 46);
+            this.btnCencel.Size = new System.Drawing.Size(140, 48);
             this.btnCencel.TabIndex = 9;
             this.btnCencel.Text = "Clear";
             this.btnCencel.UseVisualStyleBackColor = false;
@@ -158,7 +158,7 @@
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.Location = new System.Drawing.Point(602, 378);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 46);
+            this.button1.Size = new System.Drawing.Size(140, 48);
             this.button1.TabIndex = 15;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = false;
@@ -168,7 +168,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -180,7 +179,7 @@
             this.Controls.Add(this.LogoCompany);
             this.Controls.Add(this.label1);
             this.Name = "uc_Setting";
-            this.Size = new System.Drawing.Size(1113, 762);
+            this.Size = new System.Drawing.Size(1115, 764);
             this.Load += new System.EventHandler(this.uc_Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LogoCompany)).EndInit();
             this.ResumeLayout(false);
