@@ -26,5 +26,10 @@ namespace inventory_system.View
         {
 
         }
+
+        private void uc_User_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
