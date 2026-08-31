@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventory_system.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,8 @@ namespace inventory_system.View
 
         private void uc_User_Load(object sender, EventArgs e)
         {
-
+            UserController userCtrl = new UserController();
+            dgUser.DataSource = userCtrl.ShowData();
         }
     }
 }

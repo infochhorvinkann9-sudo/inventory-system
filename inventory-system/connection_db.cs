@@ -19,7 +19,8 @@ namespace inventory_system
                       @"Data Source=DESKTOP-O31OODG;
                       Initial Catalog=inventory_db;
                       User ID=sa;
-                      Password=12";
+                      Password=123;
+                      Integrated Security=True";
                 conn = new SqlConnection(connectionString);
                 conn.Open();
             }
