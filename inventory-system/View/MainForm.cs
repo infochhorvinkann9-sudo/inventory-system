@@ -71,6 +71,7 @@ namespace inventory_system.View
         private void button7_Click(object sender, EventArgs e)
         {
             uc_Container.Controls.Clear();
+            uc_Container.Dock = DockStyle.Fill;
             uc_Setting settingControl = new uc_Setting();
             uc_Container.Controls.Add(settingControl);
             settingControl.BringToFront();

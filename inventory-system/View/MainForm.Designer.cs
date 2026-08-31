@@ -183,7 +183,7 @@
             // 
             // uc_Container
             // 
-            this.uc_Container.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.uc_Container.BackColor = System.Drawing.SystemColors.Control;
             this.uc_Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_Container.Location = new System.Drawing.Point(214, 0);
             this.uc_Container.Name = "uc_Container";
@@ -195,6 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(973, 670);
             this.Controls.Add(this.uc_Container);
             this.Controls.Add(this.panel1);
