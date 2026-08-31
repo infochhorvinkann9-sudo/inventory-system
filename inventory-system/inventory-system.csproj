@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connection_db.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="formlogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,9 +185,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\man-with-sunglasses-and-suit.png" />
   </ItemGroup>
