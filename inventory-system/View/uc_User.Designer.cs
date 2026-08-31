@@ -265,6 +265,7 @@
             this.Name = "uc_User";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(1064, 814);
+            this.Load += new System.EventHandler(this.uc_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
