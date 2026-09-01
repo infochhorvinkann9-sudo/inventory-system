@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.LogoCompany = new System.Windows.Forms.PictureBox();
+            this.pblogo = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnCencel = new System.Windows.Forms.Button();
             this.addLogo = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtcompanyid = new System.Windows.Forms.TextBox();
+            this.txtcompanyname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoCompany)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,19 +54,19 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Setting Information";
             // 
-            // LogoCompany
+            // pblogo
             // 
-            this.LogoCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pblogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogoCompany.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LogoCompany.Image = global::inventory_system.Properties.Resources.man_with_sunglasses_and_suit;
-            this.LogoCompany.Location = new System.Drawing.Point(228, 116);
-            this.LogoCompany.Name = "LogoCompany";
-            this.LogoCompany.Size = new System.Drawing.Size(242, 310);
-            this.LogoCompany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoCompany.TabIndex = 5;
-            this.LogoCompany.TabStop = false;
+            this.pblogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pblogo.Image = global::inventory_system.Properties.Resources.man_with_sunglasses_and_suit;
+            this.pblogo.Location = new System.Drawing.Point(228, 116);
+            this.pblogo.Name = "pblogo";
+            this.pblogo.Size = new System.Drawing.Size(242, 310);
+            this.pblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pblogo.TabIndex = 5;
+            this.pblogo.TabStop = false;
             // 
             // btnSave
             // 
@@ -75,25 +74,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSave.Location = new System.Drawing.Point(689, 307);
+            this.btnSave.Location = new System.Drawing.Point(512, 324);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 48);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // btnCencel
-            // 
-            this.btnCencel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCencel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCencel.Location = new System.Drawing.Point(512, 307);
-            this.btnCencel.Name = "btnCencel";
-            this.btnCencel.Size = new System.Drawing.Size(140, 48);
-            this.btnCencel.TabIndex = 9;
-            this.btnCencel.Text = "Clear";
-            this.btnCencel.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // addLogo
             // 
@@ -113,6 +100,7 @@
             this.addLogo.TabIndex = 10;
             this.addLogo.TabStop = true;
             this.addLogo.Text = "COMPANY LOGO";
+            this.addLogo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.addLogo_LinkClicked);
             // 
             // label3
             // 
@@ -134,21 +122,21 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Company ID";
             // 
-            // textBox2
+            // txtcompanyid
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(512, 247);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(315, 38);
-            this.textBox2.TabIndex = 12;
+            this.txtcompanyid.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcompanyid.Location = new System.Drawing.Point(512, 144);
+            this.txtcompanyid.Name = "txtcompanyid";
+            this.txtcompanyid.Size = new System.Drawing.Size(315, 38);
+            this.txtcompanyid.TabIndex = 12;
             // 
-            // textBox1
+            // txtcompanyname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(512, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 38);
-            this.textBox1.TabIndex = 11;
+            this.txtcompanyname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcompanyname.Location = new System.Drawing.Point(514, 239);
+            this.txtcompanyname.Name = "txtcompanyname";
+            this.txtcompanyname.Size = new System.Drawing.Size(315, 38);
+            this.txtcompanyname.TabIndex = 11;
             // 
             // button1
             // 
@@ -156,7 +144,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.Location = new System.Drawing.Point(602, 378);
+            this.button1.Location = new System.Drawing.Point(689, 324);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 48);
             this.button1.TabIndex = 15;
@@ -171,17 +159,16 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtcompanyid);
+            this.Controls.Add(this.txtcompanyname);
             this.Controls.Add(this.addLogo);
-            this.Controls.Add(this.btnCencel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.LogoCompany);
+            this.Controls.Add(this.pblogo);
             this.Controls.Add(this.label1);
             this.Name = "uc_Setting";
             this.Size = new System.Drawing.Size(1115, 764);
             this.Load += new System.EventHandler(this.uc_Setting_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoCompany)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,14 +177,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox LogoCompany;
+        private System.Windows.Forms.PictureBox pblogo;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCencel;
         private System.Windows.Forms.LinkLabel addLogo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtcompanyid;
+        private System.Windows.Forms.TextBox txtcompanyname;
         private System.Windows.Forms.Button button1;
     }
 }
