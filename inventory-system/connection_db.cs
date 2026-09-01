@@ -13,14 +13,34 @@ namespace inventory_system
         public SqlConnection conn;
         public connection_db()
         {
+            string machineName = Environment.MachineName;
+            string dataSource;
+            string password;
+
+            if (machineName.Equals("DESKTOP-O31OODG", StringComparison.OrdinalIgnoreCase))
+            {
+                dataSource = "DESKTOP-O31OODG";
+                password = "123";
+            }
+            else if (machineName.Equals("DESKTOP-GLML442", StringComparison.OrdinalIgnoreCase))
+            {
+                dataSource = @"DESKTOP-GLML442\MSSQLSERVER01";
+                password = "2233";
+            }
+            else
+            {
+                Console.WriteLine("Unknown computer! No matching server config.");
+                return;
+            }
+
             try
             {
                 string connectionString =
-                      @"Data Source=DESKTOP-O31OODG;
-                      Initial Catalog=inventory_db;
-                      User ID=sa;
-                      Password=123;
-                      Integrated Security=True";
+                    $@"Data Source={dataSource};
+                    Initial Catalog=inventory_db;
+                    User ID=sa;
+                    Password={password};";
+
                 conn = new SqlConnection(connectionString);
                 conn.Open();
             }
