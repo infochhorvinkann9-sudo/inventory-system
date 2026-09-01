@@ -8,7 +8,7 @@ namespace inventory_system.Models
 {
     internal class ModelsSetting : connection_db
     {
-        public int SettingId { get; set; }
+        public int CompanyId { get; set; }
         public string CompanyName { get; set; }
         public byte[] CompanyLogo { get; set; }
     }

@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connection_db.cs" />
+    <Compile Include="Controller\ControllerSetting.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="formlogin.cs">
       <SubType>Form</SubType>
