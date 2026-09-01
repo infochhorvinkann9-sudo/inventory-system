@@ -251,10 +251,7 @@
             this.dgUser.RowTemplate.Height = 24;
             this.dgUser.Size = new System.Drawing.Size(1029, 424);
             this.dgUser.TabIndex = 21;
-<<<<<<< HEAD
-=======
-            this.dgUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUser_CellContentClick);
->>>>>>> d93c21be10aa2b46b7f57d77e3e1e524154171af
+            this.dgUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUser_CellContentClick_1);
             // 
             // Column1
             // 
@@ -329,11 +326,7 @@
             this.Controls.Add(this.label1);
             this.Name = "uc_User";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-<<<<<<< HEAD
             this.Size = new System.Drawing.Size(1064, 814);
-=======
-            this.Size = new System.Drawing.Size(1071, 850);
->>>>>>> d93c21be10aa2b46b7f57d77e3e1e524154171af
             this.Load += new System.EventHandler(this.uc_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgUser)).EndInit();
             this.ResumeLayout(false);
