@@ -37,5 +37,10 @@ namespace inventory_system.View
         {
 
         }
+
+        private void dgUser_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
