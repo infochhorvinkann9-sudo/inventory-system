@@ -20,7 +20,7 @@ namespace inventory_system
         {
             InitializeComponent();
         }
-
+        Controller.ControllerSetting setting = new Controller.ControllerSetting();
         private void button1_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -28,15 +28,21 @@ namespace inventory_system
 
         private void formlogin_Load(object sender, EventArgs e)
         {
-
+            LoadLogo();
         }
-        public void loadData()
+        private void LoadLogo()
         {
             try
             {
                 SqlCommand cmd = new SqlCommand(
-                "SELECT SettingID , CompanyLogo from tbl_setting where SettingID = @SettingID", setting.conn);
-                cmd.Parameters.AddWithValue("@SettingID", 1);
+                    "SELECT CompanyLogo FROM tblSetting WHERE CompanyId = @CompanyId", setting.conn);
+                cmd.Parameters.AddWithValue("@CompanyId", 1);
+
+                if (setting.conn.State != ConnectionState.Open)
+                {
+                    setting.conn.Open();
+                }
+
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -46,16 +52,23 @@ namespace inventory_system
                         using (MemoryStream ms = new MemoryStream(img))
                         {
                             pblogo.Image = Image.FromStream(ms);
+                            pblogo.SizeMode = PictureBoxSizeMode.StretchImage; // ឬ Zoom តាមចង់
                         }
-                    }
-                    else
-                    {
-                        pblogo.Image = null;
                     }
                 }
                 dr.Close();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Logo Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (setting.conn.State == ConnectionState.Open)
+                {
+                    setting.conn.Close();
+                }
             }
         }
-    }
+    }       
+} 

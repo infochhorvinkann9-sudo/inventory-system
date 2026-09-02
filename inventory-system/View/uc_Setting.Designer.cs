@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_Setting));
             this.label1 = new System.Windows.Forms.Label();
             this.pblogo = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -37,7 +38,12 @@
             this.txtcompanyid = new System.Windows.Forms.TextBox();
             this.txtcompanyname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgsetting = new System.Windows.Forms.DataGridView();
+            this.CompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyLogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgsetting)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pblogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pblogo.Image = global::inventory_system.Properties.Resources.man_with_sunglasses_and_suit;
+            this.pblogo.Image = ((System.Drawing.Image)(resources.GetObject("pblogo.Image")));
             this.pblogo.Location = new System.Drawing.Point(228, 116);
             this.pblogo.Name = "pblogo";
             this.pblogo.Size = new System.Drawing.Size(242, 310);
@@ -150,12 +156,56 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgsetting
+            // 
+            this.dgsetting.AllowUserToAddRows = false;
+            this.dgsetting.AllowUserToDeleteRows = false;
+            this.dgsetting.ColumnHeadersHeight = 29;
+            this.dgsetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CompanyId,
+            this.CompanyName,
+            this.CompanyLogo});
+            this.dgsetting.Location = new System.Drawing.Point(111, 510);
+            this.dgsetting.Name = "dgsetting";
+            this.dgsetting.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgsetting.RowTemplate.Height = 24;
+            this.dgsetting.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgsetting.Size = new System.Drawing.Size(972, 219);
+            this.dgsetting.TabIndex = 16;
+            this.dgsetting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgsetting_CellContentClick);
+            // 
+            // CompanyId
+            // 
+            this.CompanyId.DataPropertyName = "CompanyId";
+            this.CompanyId.HeaderText = "CompanyId";
+            this.CompanyId.MinimumWidth = 6;
+            this.CompanyId.Name = "CompanyId";
+            this.CompanyId.Width = 125;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.DataPropertyName = "CompanyName";
+            this.CompanyName.HeaderText = "CompanyName";
+            this.CompanyName.MinimumWidth = 6;
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.Width = 125;
+            // 
+            // CompanyLogo
+            // 
+            this.CompanyLogo.DataPropertyName = "CompanyLogo";
+            this.CompanyLogo.HeaderText = "CompanyLogo";
+            this.CompanyLogo.MinimumWidth = 6;
+            this.CompanyLogo.Name = "CompanyLogo";
+            this.CompanyLogo.Width = 125;
             // 
             // uc_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.dgsetting);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -169,6 +219,7 @@
             this.Size = new System.Drawing.Size(1115, 764);
             this.Load += new System.EventHandler(this.uc_Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgsetting)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +236,9 @@
         private System.Windows.Forms.TextBox txtcompanyid;
         private System.Windows.Forms.TextBox txtcompanyname;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgsetting;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyLogo;
     }
 }

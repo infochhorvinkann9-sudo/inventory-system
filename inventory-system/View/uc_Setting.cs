@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -22,22 +23,22 @@ namespace inventory_system.View
 
         private void uc_Setting_Load(object sender, EventArgs e)
         {
-            loadData();
-            if(txtcompanyname.Text != "")
-            {
-                btnSave.Text="Update Setting";
-            }
+            loadData(1);
+            LoadGrid();
         }
-        public void loadData()
+        public void loadData(int companyId)
         {
             try
             {
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(
-                "SELECT CompanyId , CompanyName, CompanyLogo from tblSetting where CompanyId = @CompanyId", controllerSetting.conn);
-                cmd.Parameters.AddWithValue("@CompanyId", 1);
+                "SELECT CompanyId, CompanyName, CompanyLogo from tblSetting where CompanyId = @CompanyId", setting.conn);
+                cmd.Parameters.AddWithValue("@CompanyId", companyId);
                 System.Data.SqlClient.SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    txtcompanyid.Text = dr["CompanyId"].ToString();
+                    txtcompanyname.Text = dr["CompanyName"].ToString();
+
                     if (dr["CompanyLogo"] != DBNull.Value)
                     {
                         byte[] img = (byte[])dr["CompanyLogo"];
@@ -50,10 +51,14 @@ namespace inventory_system.View
                     {
                         pblogo.Image = null;
                     }
+                    btnSave.Text = "Update Setting";
                 }
                 dr.Close();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Setting Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void addLogo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -68,42 +73,102 @@ namespace inventory_system.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnSave.Text == "Insert Setting")
-            {
-            }
             if (txtcompanyname.Text == "")
             {
                 MessageBox.Show("Invalid Company Name", "Valid Company Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtcompanyname.Focus();
+                return;
+            }
+
+            if (pblogo.Image == null)
+            {
+                MessageBox.Show("Please Select a Company Logo", "Valid Logo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            byte[] arr;
+            ImageConverter converter = new ImageConverter();
+            arr = (byte[])converter.ConvertTo(pblogo.Image, typeof(byte[]));
+
+            if (btnSave.Text == "Add Logo")
+            {
+                setting.CompanyName = txtcompanyname.Text;
+                setting.CompanyLogo = arr;
+                setting.InsertSetting();
+                MessageBox.Show("Logo Has Been Inserted",
+                "Insert Logo", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
             }
             else
             {
-                if (btnSave.Text == "Add Setting")
+                int companyId;
+                if (!int.TryParse(txtcompanyid.Text, out companyId))
                 {
-                    System.Drawing.Image img = pblogo.Image;
-                    byte[] arr;
-                    ImageConverter converter = new ImageConverter();
-                    arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
-                    setting.CompanyName = txtcompanyname.Text;
-                    setting.CompanyLogo = arr;
-                    setting.InsertSetting();
-                    MessageBox.Show("Setting Has Been Inserted",
-                    "Insert Setting", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    MessageBox.Show("Invalid Company Id", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtcompanyid.Focus();
+                    return;
                 }
-                else
-                {
-                    System.Drawing.Image img = pblogo.Image; byte[] arr;
-                    ImageConverter converter = new ImageConverter();
-                    arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
-                    setting.CompanyId = int.Parse(txtcompanyid.Text);
-                    setting.CompanyName = txtcompanyname.Text;
-                    setting.CompanyLogo = arr;
-                    setting.UpdateSetting();
-                    MessageBox.Show("Setting Has Been Updated", "Update Setting", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                }
+                setting.CompanyId = companyId;
+                setting.CompanyName = txtcompanyname.Text;
+                setting.CompanyLogo = arr;
+                setting.UpdateSetting();
+                MessageBox.Show("Logo Has Been Updated", "Update Logo", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int companyId;
+            if (!int.TryParse(txtcompanyid.Text, out companyId))
+            {
+                MessageBox.Show("Invalid Company Id", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure you want to delete this setting?", "Confirm Delete",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                setting.CompanyId = companyId;
+                setting.DeleteSetting();
+                MessageBox.Show("Logo Has Been Deleted", "Delete Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtcompanyid.Text = "";
+                txtcompanyname.Text = "";
+                pblogo.Image = null;
+                btnSave.Text = "Add Logo";
+            }
+        }
+
+        private void dgsetting_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgsetting.Rows[e.RowIndex];
+
+            if (int.TryParse(row.Cells["CompanyId"].Value?.ToString(), out int companyId))
+            {
+                loadData(companyId);
+            }
+        }
+        public void LoadGrid()
+        {
+            try
+            {
+                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(
+                    "SELECT CompanyId, CompanyName, CompanyLogo FROM tblSetting", setting.conn);
+                System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgsetting.DataSource = dt;
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Grid Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
-}
+ }
+    
+
