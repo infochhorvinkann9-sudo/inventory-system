@@ -53,5 +53,6 @@ namespace inventory_system.Controller
             }
             catch { }
         }
+
     }
 }
