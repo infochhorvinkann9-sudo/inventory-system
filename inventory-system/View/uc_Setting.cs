@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,21 +19,28 @@ namespace inventory_system.View
         {
             InitializeComponent();
         }
-        Controller.ControllerSetting setting = new Controller.ControllerSetting();
 
+        Controller.ControllerSetting setting = new Controller.ControllerSetting();
 
         private void uc_Setting_Load(object sender, EventArgs e)
         {
             loadData(1);
             LoadGrid();
         }
+
         public void loadData(int companyId)
         {
             try
             {
+                if (setting.conn.State != ConnectionState.Open)
+                {
+                    setting.conn.Open();
+                }
+
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(
-                "SELECT CompanyId, CompanyName, CompanyLogo from tblSetting where CompanyId = @CompanyId", setting.conn);
+                    "SELECT CompanyId, CompanyName, CompanyLogo from tblSetting where CompanyId = @CompanyId", setting.conn);
                 cmd.Parameters.AddWithValue("@CompanyId", companyId);
+
                 System.Data.SqlClient.SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -58,6 +66,13 @@ namespace inventory_system.View
             catch (Exception ex)
             {
                 MessageBox.Show("Load Setting Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (setting.conn.State == ConnectionState.Open)
+                {
+                    setting.conn.Close();
+                }
             }
         }
 
@@ -95,9 +110,7 @@ namespace inventory_system.View
                 setting.CompanyName = txtcompanyname.Text;
                 setting.CompanyLogo = arr;
                 setting.InsertSetting();
-                MessageBox.Show("Logo Has Been Inserted",
-                "Insert Logo", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                MessageBox.Show("Logo Has Been Inserted", "Insert Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -112,9 +125,9 @@ namespace inventory_system.View
                 setting.CompanyName = txtcompanyname.Text;
                 setting.CompanyLogo = arr;
                 setting.UpdateSetting();
-                MessageBox.Show("Logo Has Been Updated", "Update Logo", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                MessageBox.Show("Logo Has Been Updated", "Update Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            LoadGrid();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -137,6 +150,7 @@ namespace inventory_system.View
                 txtcompanyname.Text = "";
                 pblogo.Image = null;
                 btnSave.Text = "Add Logo";
+                LoadGrid();
             }
         }
 
@@ -151,24 +165,34 @@ namespace inventory_system.View
                 loadData(companyId);
             }
         }
+
         public void LoadGrid()
         {
             try
             {
+                if (setting.conn.State != ConnectionState.Open)
+                {
+                    setting.conn.Open();
+                }
+
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(
                     "SELECT CompanyId, CompanyName, CompanyLogo FROM tblSetting", setting.conn);
                 System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgsetting.DataSource = dt;
-              
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Load Grid Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                if (setting.conn.State == ConnectionState.Open)
+                {
+                    setting.conn.Close();
+                }
+            }
         }
     }
- }
-    
-
+}

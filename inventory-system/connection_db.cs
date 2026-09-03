@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -11,6 +7,7 @@ namespace inventory_system
     class connection_db
     {
         public SqlConnection conn;
+
         public connection_db()
         {
             string machineName = Environment.MachineName;
@@ -29,26 +26,22 @@ namespace inventory_system
             }
             else
             {
-                Console.WriteLine("Unknown computer! No matching server config.");
                 return;
             }
 
-            try
-            {
-                string connectionString =
-                    $@"Data Source={dataSource};
-                    Initial Catalog=inventory_db;
-                    User ID=sa;
-                    Password={password};";
+            string connectionString = $@"Data Source={dataSource};Initial Catalog=inventory_db;User ID=sa;Password={password};";
+            conn = new SqlConnection(connectionString);
+        }
 
-                conn = new SqlConnection(connectionString);
-                conn.Open();
-            }
-            catch (Exception ex)
+        // Add this static method so calls to connection_db.GetConnection() work everywhere!
+        public static SqlConnection GetConnection()
+        {
+            connection_db db = new connection_db();
+            if (db.conn != null && db.conn.State != System.Data.ConnectionState.Open)
             {
-                Console.WriteLine("Connection Failed!");
-                Console.WriteLine(ex.Message);
+                db.conn.Open();
             }
+            return db.conn;
         }
     }
 }
