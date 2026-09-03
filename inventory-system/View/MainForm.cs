@@ -86,5 +86,12 @@ namespace inventory_system.View
         {
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }

@@ -88,16 +88,17 @@
     <Compile Include="Controller\ControllerSetting.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Functions.cs" />
-    <Compile Include="formlogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formlogin.Designer.cs">
-      <DependentUpon>formlogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\ModelsSetting.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDetail.cs" />
+    <Compile Include="View\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,9 +141,6 @@
     <Compile Include="View\uc_User.Designer.cs">
       <DependentUpon>uc_User.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formlogin.resx">
-      <DependentUpon>formlogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -153,6 +151,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

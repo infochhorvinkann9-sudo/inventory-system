@@ -82,7 +82,19 @@ namespace inventory_system.Controller
 
 
 
-
+        public static bool IsUsernameToken(string username)
+        {
+            string sql = "SELECT COUNT(*) FROM tblUsers WHERE UserName = @UserName";
+            using (SqlConnection conn = connection_db.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@UserName", username);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
 
 
 
