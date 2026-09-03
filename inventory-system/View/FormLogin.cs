@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,31 +37,12 @@ namespace inventory_system.View
         {
             try
             {
-                if (setting.conn == null) return;
-
-                SqlCommand cmd = new SqlCommand(
-                    "SELECT CompanyLogo FROM tblSetting WHERE CompanyId = @CompanyId", setting.conn);
-                cmd.Parameters.AddWithValue("@CompanyId", 1);
-
-                if (setting.conn.State != ConnectionState.Open)
+                Image logo = setting.GetCompanyLogo();
+                if (logo != null)
                 {
-                    setting.conn.Open();
+                    pblogo.Image = logo;
+                    pblogo.SizeMode = PictureBoxSizeMode.Zoom;
                 }
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    if (dr["CompanyLogo"] != DBNull.Value)
-                    {
-                        byte[] img = (byte[])dr["CompanyLogo"];
-                        using (MemoryStream ms = new MemoryStream(img))
-                        {
-                            pblogo.Image = Image.FromStream(ms);
-                            pblogo.SizeMode = PictureBoxSizeMode.StretchImage;
-                        }
-                    }
-                }
-                dr.Close();
             }
             catch (Exception ex)
             {
@@ -101,7 +81,6 @@ namespace inventory_system.View
                     SqlCommand cmd = newConn.conn.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "SELECT * FROM tblUsers WHERE UserName = @UserName AND Password = @Password";
-
                     cmd.Parameters.AddWithValue("@UserName", txtUsername.Text.Trim());
                     cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
 
@@ -138,6 +117,16 @@ namespace inventory_system.View
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pblogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormLogin_Load_1(object sender, EventArgs e)
+        {
+            LoadLogo();
         }
     }
 }

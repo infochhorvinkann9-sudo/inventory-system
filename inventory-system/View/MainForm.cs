@@ -12,6 +12,8 @@ namespace inventory_system.View
 {
     public partial class MainForm : Form
     {
+        Controller.ControllerSetting setting = new Controller.ControllerSetting();
+
         public MainForm()
         {
             InitializeComponent();
@@ -89,9 +91,34 @@ namespace inventory_system.View
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            LoadLogo();
         }
 
-      
+        public void RefreshLogo()
+        {
+            LoadLogo();
+        }
+
+        private void LoadLogo()
+        {
+            try
+            {
+                Image logo = setting.GetCompanyLogo();
+                if (logo != null)
+                {
+                    pictureBox1.Image = logo;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Logo Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
