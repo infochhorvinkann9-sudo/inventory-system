@@ -118,6 +118,7 @@
             this.pblogo.Size = new System.Drawing.Size(169, 206);
             this.pblogo.TabIndex = 9;
             this.pblogo.TabStop = false;
+            this.pblogo.Click += new System.EventHandler(this.pblogo_Click);
             // 
             // FormLogin
             // 
@@ -135,6 +136,7 @@
             this.Controls.Add(this.pblogo);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
+            this.Load += new System.EventHandler(this.FormLogin_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

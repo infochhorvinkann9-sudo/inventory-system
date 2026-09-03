@@ -95,7 +95,7 @@
             this.button6.BackColor = System.Drawing.Color.Gainsboro;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.DarkGreen;
-            this.button6.Location = new System.Drawing.Point(11, 460);
+            this.button6.Location = new System.Drawing.Point(11, 459);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(243, 45);
             this.button6.TabIndex = 6;
@@ -168,6 +168,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 

@@ -107,10 +107,18 @@ namespace inventory_system.View
 
             if (btnSave.Text == "Add Logo")
             {
-                setting.CompanyName = txtcompanyname.Text;
-                setting.CompanyLogo = arr;
-                setting.InsertSetting();
-                MessageBox.Show("Logo Has Been Inserted", "Insert Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    setting.CompanyName = txtcompanyname.Text;
+                    setting.CompanyLogo = arr;
+                    setting.InsertSetting();
+                    MessageBox.Show("Logo Has Been Inserted", "Insert Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Insert Logo Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             else
             {
@@ -121,13 +129,22 @@ namespace inventory_system.View
                     txtcompanyid.Focus();
                     return;
                 }
-                setting.CompanyId = companyId;
-                setting.CompanyName = txtcompanyname.Text;
-                setting.CompanyLogo = arr;
-                setting.UpdateSetting();
-                MessageBox.Show("Logo Has Been Updated", "Update Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    setting.CompanyId = companyId;
+                    setting.CompanyName = txtcompanyname.Text;
+                    setting.CompanyLogo = arr;
+                    setting.UpdateSetting();
+                    MessageBox.Show("Logo Has Been Updated", "Update Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Update Logo Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             LoadGrid();
+            RefreshMainFormLogo();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -142,15 +159,24 @@ namespace inventory_system.View
             if (MessageBox.Show("Are you sure you want to delete this setting?", "Confirm Delete",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                setting.CompanyId = companyId;
-                setting.DeleteSetting();
-                MessageBox.Show("Logo Has Been Deleted", "Delete Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    setting.CompanyId = companyId;
+                    setting.DeleteSetting();
+                    MessageBox.Show("Logo Has Been Deleted", "Delete Logo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Delete Logo Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 txtcompanyid.Text = "";
                 txtcompanyname.Text = "";
                 pblogo.Image = null;
                 btnSave.Text = "Add Logo";
                 LoadGrid();
+                RefreshMainFormLogo();
             }
         }
 
@@ -192,6 +218,15 @@ namespace inventory_system.View
                 {
                     setting.conn.Close();
                 }
+            }
+        }
+
+        private void RefreshMainFormLogo()
+        {
+            MainForm mainForm = FindForm() as MainForm;
+            if (mainForm != null)
+            {
+                mainForm.RefreshLogo();
             }
         }
     }
