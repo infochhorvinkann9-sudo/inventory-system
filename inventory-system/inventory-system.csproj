@@ -86,9 +86,11 @@
   <ItemGroup>
     <Compile Include="connection_db.cs" />
     <Compile Include="Controller\ControllerSetting.cs" />
+    <Compile Include="Controller\Controllersupplier.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Models\ModelsSetting.cs" />
+    <Compile Include="Models\Modelsupplier.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

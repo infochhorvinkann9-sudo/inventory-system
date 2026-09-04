@@ -28,63 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgsupplier = new System.Windows.Forms.DataGridView();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtadress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtsupplieremail = new System.Windows.Forms.TextBox();
+            this.txtnumber = new System.Windows.Forms.TextBox();
+            this.txtsuppliername = new System.Windows.Forms.TextBox();
+            this.txtsupplierId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgsupplier)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgsupplier
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 372);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(934, 424);
-            this.dataGridView1.TabIndex = 40;
+            this.dgsupplier.AllowUserToAddRows = false;
+            this.dgsupplier.AllowUserToDeleteRows = false;
+            this.dgsupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgsupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column5,
+            this.Column3,
+            this.Column4});
+            this.dgsupplier.Location = new System.Drawing.Point(23, 367);
+            this.dgsupplier.Name = "dgsupplier";
+            this.dgsupplier.ReadOnly = true;
+            this.dgsupplier.RowHeadersWidth = 51;
+            this.dgsupplier.RowTemplate.Height = 24;
+            this.dgsupplier.Size = new System.Drawing.Size(934, 424);
+            this.dgsupplier.TabIndex = 40;
+            this.dgsupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgsupplier_CellContentClick);
             // 
-            // button3
+            // btnsave
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(815, 223);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 39);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnsave.Location = new System.Drawing.Point(815, 99);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(197, 66);
+            this.btnsave.TabIndex = 39;
+            this.btnsave.Text = "Add Supplier";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // button2
+            // btndelete
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(815, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 38);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btndelete.Location = new System.Drawing.Point(815, 195);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(197, 66);
+            this.btndelete.TabIndex = 38;
+            this.btndelete.Text = "Delete Supplier";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(815, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 38);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Location = new System.Drawing.Point(815, 282);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(197, 66);
+            this.btnClear.TabIndex = 37;
+            this.btnClear.Text = "Update Supplier";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label8
             // 
@@ -96,14 +114,14 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Address";
             // 
-            // textBox5
+            // txtadress
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(410, 223);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(377, 125);
-            this.textBox5.TabIndex = 35;
+            this.txtadress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtadress.Location = new System.Drawing.Point(410, 223);
+            this.txtadress.Multiline = true;
+            this.txtadress.Name = "txtadress";
+            this.txtadress.Size = new System.Drawing.Size(377, 125);
+            this.txtadress.TabIndex = 35;
             // 
             // label5
             // 
@@ -145,37 +163,37 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Supplier ID";
             // 
-            // textBox4
+            // txtsupplieremail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(23, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(351, 38);
-            this.textBox4.TabIndex = 26;
+            this.txtsupplieremail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsupplieremail.Location = new System.Drawing.Point(23, 223);
+            this.txtsupplieremail.Name = "txtsupplieremail";
+            this.txtsupplieremail.Size = new System.Drawing.Size(351, 38);
+            this.txtsupplieremail.TabIndex = 26;
             // 
-            // textBox3
+            // txtnumber
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(23, 310);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(351, 38);
-            this.textBox3.TabIndex = 25;
+            this.txtnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnumber.Location = new System.Drawing.Point(23, 310);
+            this.txtnumber.Name = "txtnumber";
+            this.txtnumber.Size = new System.Drawing.Size(351, 38);
+            this.txtnumber.TabIndex = 25;
             // 
-            // textBox2
+            // txtsuppliername
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(410, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(377, 38);
-            this.textBox2.TabIndex = 24;
+            this.txtsuppliername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsuppliername.Location = new System.Drawing.Point(410, 127);
+            this.txtsuppliername.Name = "txtsuppliername";
+            this.txtsuppliername.Size = new System.Drawing.Size(377, 38);
+            this.txtsuppliername.TabIndex = 24;
             // 
-            // textBox1
+            // txtsupplierId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(23, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(351, 38);
-            this.textBox1.TabIndex = 23;
+            this.txtsupplierId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsupplierId.Location = new System.Drawing.Point(23, 127);
+            this.txtsupplierId.Name = "txtsupplierId";
+            this.txtsupplierId.Size = new System.Drawing.Size(351, 38);
+            this.txtsupplierId.TabIndex = 23;
             // 
             // label1
             // 
@@ -188,28 +206,69 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Manage Supplier";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "SupplierId";
+            this.Column1.HeaderText = "Supplier Id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SupplierName";
+            this.Column2.HeaderText = "Supplier Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SupplierPhone";
+            this.Column5.HeaderText = "Phone Number";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SupplierEmail";
+            this.Column3.HeaderText = "Supplier Email";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SupplierAddress";
+            this.Column4.HeaderText = "Address";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
             // uc_Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgsupplier);
+            this.Controls.Add(this.btnsave);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtadress);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtsupplieremail);
+            this.Controls.Add(this.txtnumber);
+            this.Controls.Add(this.txtsuppliername);
+            this.Controls.Add(this.txtsupplierId);
             this.Controls.Add(this.label1);
             this.Name = "uc_Supplier";
-            this.Size = new System.Drawing.Size(990, 807);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(1027, 807);
+            this.Load += new System.EventHandler(this.uc_Supplier_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgsupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,20 +276,25 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgsupplier;
+        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtadress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtsupplieremail;
+        private System.Windows.Forms.TextBox txtnumber;
+        private System.Windows.Forms.TextBox txtsuppliername;
+        private System.Windows.Forms.TextBox txtsupplierId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
