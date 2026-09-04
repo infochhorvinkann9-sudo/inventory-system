@@ -85,10 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connection_db.cs" />
+    <Compile Include="Controller\ControllerModels.cs" />
     <Compile Include="Controller\ControllerSetting.cs" />
     <Compile Include="Controller\Controllersupplier.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Functions.cs" />
+    <Compile Include="Models\Modelmodels.cs" />
     <Compile Include="Models\ModelsSetting.cs" />
     <Compile Include="Models\Modelsupplier.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -124,6 +126,12 @@
     </Compile>
     <Compile Include="View\uc_Category.Designer.cs">
       <DependentUpon>uc_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uc_Models.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uc_Models.Designer.cs">
+      <DependentUpon>uc_Models.cs</DependentUpon>
     </Compile>
     <Compile Include="View\uc_Setting.cs">
       <SubType>UserControl</SubType>
@@ -167,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\uc_Category.resx">
       <DependentUpon>uc_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uc_Models.resx">
+      <DependentUpon>uc_Models.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\uc_Setting.resx">
       <DependentUpon>uc_Setting.cs</DependentUpon>
