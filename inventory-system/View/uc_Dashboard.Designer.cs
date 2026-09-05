@@ -33,6 +33,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.RosyBrown;
@@ -42,13 +43,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Dashboard";
             // 
-            // ucDashboard
+            // uc_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "ucDashboard";
+            this.Name = "uc_Dashboard";
             this.Size = new System.Drawing.Size(1059, 802);
+            this.Load += new System.EventHandler(this.uc_Dashboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

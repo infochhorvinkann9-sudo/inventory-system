@@ -15,6 +15,7 @@ namespace inventory_system.View
         public uc_Accessory()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
         private void uc_Accessory_Load(object sender, EventArgs e)

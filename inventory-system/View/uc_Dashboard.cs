@@ -15,6 +15,12 @@ namespace inventory_system.View
         public uc_Dashboard()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+        }
+
+        private void uc_Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

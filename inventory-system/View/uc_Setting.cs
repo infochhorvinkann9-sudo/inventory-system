@@ -18,6 +18,7 @@ namespace inventory_system.View
         public uc_Setting()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
         Controller.ControllerSetting setting = new Controller.ControllerSetting();

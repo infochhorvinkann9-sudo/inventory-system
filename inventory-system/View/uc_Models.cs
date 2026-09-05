@@ -15,6 +15,12 @@ namespace inventory_system.View
         public uc_Models()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+        }
+
+        private void uc_Models_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

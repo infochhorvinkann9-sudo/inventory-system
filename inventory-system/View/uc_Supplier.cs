@@ -15,6 +15,7 @@ namespace inventory_system.View
         public uc_Supplier()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
         Controller.Controllersupplier supplier = new Controller.Controllersupplier();
 
