@@ -48,9 +48,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.RosyBrown;
@@ -62,9 +60,7 @@
             // 
             // pblogo
             // 
-            this.pblogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pblogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pblogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pblogo.Image = ((System.Drawing.Image)(resources.GetObject("pblogo.Image")));
             this.pblogo.Location = new System.Drawing.Point(228, 116);
@@ -76,9 +72,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSave.Location = new System.Drawing.Point(512, 324);
             this.btnSave.Name = "btnSave";
@@ -91,9 +85,7 @@
             // addLogo
             // 
             this.addLogo.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.addLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addLogo.AutoSize = true;
             this.addLogo.BackColor = System.Drawing.Color.GreenYellow;
             this.addLogo.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -110,6 +102,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(596, 211);
@@ -120,6 +113,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(607, 116);
@@ -130,6 +124,7 @@
             // 
             // txtcompanyid
             // 
+            this.txtcompanyid.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtcompanyid.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcompanyid.Location = new System.Drawing.Point(512, 144);
             this.txtcompanyid.Name = "txtcompanyid";
@@ -138,6 +133,7 @@
             // 
             // txtcompanyname
             // 
+            this.txtcompanyname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtcompanyname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcompanyname.Location = new System.Drawing.Point(514, 239);
             this.txtcompanyname.Name = "txtcompanyname";
@@ -146,9 +142,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.Location = new System.Drawing.Point(689, 324);
             this.button1.Name = "button1";
@@ -162,6 +156,7 @@
             // 
             this.dgsetting.AllowUserToAddRows = false;
             this.dgsetting.AllowUserToDeleteRows = false;
+            this.dgsetting.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgsetting.ColumnHeadersHeight = 29;
             this.dgsetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CompanyId,

@@ -15,6 +15,13 @@ namespace inventory_system.View
         public uc_Category()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+
+        }
+
+        private void uc_Category_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

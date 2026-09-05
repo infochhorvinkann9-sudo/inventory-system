@@ -40,20 +40,21 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgUser = new System.Windows.Forms.DataGridView();
-            this.cboxUserStatus = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.ckShowPass = new System.Windows.Forms.CheckBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboxUserStatus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.ckShowPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Sienna;
@@ -65,6 +66,7 @@
             // 
             // txtUserId
             // 
+            this.txtUserId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserId.Location = new System.Drawing.Point(215, 142);
             this.txtUserId.Name = "txtUserId";
@@ -73,6 +75,7 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(590, 142);
             this.txtUserName.Name = "txtUserName";
@@ -81,6 +84,7 @@
             // 
             // cboxUserRole
             // 
+            this.cboxUserRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboxUserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxUserRole.FormattingEnabled = true;
             this.cboxUserRole.Items.AddRange(new object[] {
@@ -94,6 +98,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(210, 114);
@@ -104,6 +109,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(585, 114);
@@ -114,6 +120,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(585, 210);
@@ -124,6 +131,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(356, 210);
@@ -134,6 +142,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Location = new System.Drawing.Point(233, 326);
             this.btnAdd.Name = "btnAdd";
@@ -145,6 +154,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Location = new System.Drawing.Point(562, 325);
             this.btnDelete.Name = "btnDelete";
@@ -156,6 +166,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.Location = new System.Drawing.Point(399, 325);
             this.btnUpdate.Name = "btnUpdate";
@@ -167,6 +178,7 @@
             // 
             // dgUser
             // 
+            this.dgUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -182,49 +194,6 @@
             this.dgUser.TabIndex = 21;
             this.dgUser.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgUser_CellFormatting);
             this.dgUser.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgUser_CellMouseClick);
-            // 
-            // cboxUserStatus
-            // 
-            this.cboxUserStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxUserStatus.FormattingEnabled = true;
-            this.cboxUserStatus.Items.AddRange(new object[] {
-            "InActive",
-            "Active"});
-            this.cboxUserStatus.Location = new System.Drawing.Point(361, 238);
-            this.cboxUserStatus.Name = "cboxUserStatus";
-            this.cboxUserStatus.Size = new System.Drawing.Size(178, 39);
-            this.cboxUserStatus.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(90, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 25);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(95, 238);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '#';
-            this.txtPassword.Size = new System.Drawing.Size(214, 38);
-            this.txtPassword.TabIndex = 22;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
-            // 
-            // ckShowPass
-            // 
-            this.ckShowPass.AutoSize = true;
-            this.ckShowPass.Location = new System.Drawing.Point(184, 282);
-            this.ckShowPass.Name = "ckShowPass";
-            this.ckShowPass.Size = new System.Drawing.Size(125, 20);
-            this.ckShowPass.TabIndex = 24;
-            this.ckShowPass.Text = "Show Password";
-            this.ckShowPass.UseVisualStyleBackColor = true;
-            this.ckShowPass.CheckedChanged += new System.EventHandler(this.ckShowPass_CheckedChanged);
             // 
             // Column1
             // 
@@ -265,6 +234,53 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.Width = 125;
+            // 
+            // cboxUserStatus
+            // 
+            this.cboxUserStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboxUserStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxUserStatus.FormattingEnabled = true;
+            this.cboxUserStatus.Items.AddRange(new object[] {
+            "InActive",
+            "Active"});
+            this.cboxUserStatus.Location = new System.Drawing.Point(361, 238);
+            this.cboxUserStatus.Name = "cboxUserStatus";
+            this.cboxUserStatus.Size = new System.Drawing.Size(178, 39);
+            this.cboxUserStatus.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(90, 210);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 25);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(95, 238);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '#';
+            this.txtPassword.Size = new System.Drawing.Size(214, 38);
+            this.txtPassword.TabIndex = 22;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            // 
+            // ckShowPass
+            // 
+            this.ckShowPass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ckShowPass.AutoSize = true;
+            this.ckShowPass.Location = new System.Drawing.Point(184, 282);
+            this.ckShowPass.Name = "ckShowPass";
+            this.ckShowPass.Size = new System.Drawing.Size(125, 20);
+            this.ckShowPass.TabIndex = 24;
+            this.ckShowPass.Text = "Show Password";
+            this.ckShowPass.UseVisualStyleBackColor = true;
+            this.ckShowPass.CheckedChanged += new System.EventHandler(this.ckShowPass_CheckedChanged);
             // 
             // uc_User
             // 

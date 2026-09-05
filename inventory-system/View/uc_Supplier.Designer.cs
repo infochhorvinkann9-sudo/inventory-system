@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgsupplier = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnsave = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -43,11 +48,6 @@
             this.txtsuppliername = new System.Windows.Forms.TextBox();
             this.txtsupplierId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgsupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             // 
             this.dgsupplier.AllowUserToAddRows = false;
             this.dgsupplier.AllowUserToDeleteRows = false;
+            this.dgsupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgsupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgsupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -67,12 +68,58 @@
             this.dgsupplier.ReadOnly = true;
             this.dgsupplier.RowHeadersWidth = 51;
             this.dgsupplier.RowTemplate.Height = 24;
-            this.dgsupplier.Size = new System.Drawing.Size(934, 424);
+            this.dgsupplier.Size = new System.Drawing.Size(989, 424);
             this.dgsupplier.TabIndex = 40;
             this.dgsupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgsupplier_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "SupplierId";
+            this.Column1.HeaderText = "Supplier Id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SupplierName";
+            this.Column2.HeaderText = "Supplier Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SupplierPhone";
+            this.Column5.HeaderText = "Phone Number";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SupplierEmail";
+            this.Column3.HeaderText = "Supplier Email";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SupplierAddress";
+            this.Column4.HeaderText = "Address";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
             // btnsave
             // 
+            this.btnsave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnsave.Location = new System.Drawing.Point(815, 99);
             this.btnsave.Name = "btnsave";
@@ -84,6 +131,7 @@
             // 
             // btndelete
             // 
+            this.btndelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btndelete.Location = new System.Drawing.Point(815, 195);
             this.btndelete.Name = "btndelete";
@@ -95,6 +143,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnClear.Location = new System.Drawing.Point(815, 282);
             this.btnClear.Name = "btnClear";
@@ -106,6 +155,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(405, 195);
@@ -116,6 +166,7 @@
             // 
             // txtadress
             // 
+            this.txtadress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtadress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtadress.Location = new System.Drawing.Point(410, 223);
             this.txtadress.Multiline = true;
@@ -125,6 +176,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 195);
@@ -135,6 +187,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 282);
@@ -145,6 +198,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(405, 99);
@@ -155,6 +209,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(18, 99);
@@ -165,6 +220,7 @@
             // 
             // txtsupplieremail
             // 
+            this.txtsupplieremail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtsupplieremail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsupplieremail.Location = new System.Drawing.Point(23, 223);
             this.txtsupplieremail.Name = "txtsupplieremail";
@@ -173,6 +229,7 @@
             // 
             // txtnumber
             // 
+            this.txtnumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnumber.Location = new System.Drawing.Point(23, 310);
             this.txtnumber.Name = "txtnumber";
@@ -181,6 +238,7 @@
             // 
             // txtsuppliername
             // 
+            this.txtsuppliername.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtsuppliername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsuppliername.Location = new System.Drawing.Point(410, 127);
             this.txtsuppliername.Name = "txtsuppliername";
@@ -189,6 +247,7 @@
             // 
             // txtsupplierId
             // 
+            this.txtsupplierId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtsupplierId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsupplierId.Location = new System.Drawing.Point(23, 127);
             this.txtsupplierId.Name = "txtsupplierId";
@@ -197,6 +256,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Sienna;
@@ -205,46 +265,6 @@
             this.label1.Size = new System.Drawing.Size(390, 54);
             this.label1.TabIndex = 22;
             this.label1.Text = "Manage Supplier";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "SupplierId";
-            this.Column1.HeaderText = "Supplier Id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SupplierName";
-            this.Column2.HeaderText = "Supplier Name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "SupplierPhone";
-            this.Column5.HeaderText = "Phone Number";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "SupplierEmail";
-            this.Column3.HeaderText = "Supplier Email";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "SupplierAddress";
-            this.Column4.HeaderText = "Address";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
             // 
             // uc_Supplier
             // 

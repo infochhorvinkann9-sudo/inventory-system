@@ -16,6 +16,7 @@ namespace inventory_system.View
         public uc_User()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
         }
 
         // Call Controller to Insert User
